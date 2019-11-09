@@ -24,13 +24,25 @@ function buttonsShown() {
     $("#buttons-added").empty();
 
     for (var i = 0; i < gifs.length; i++) {
-        var b = $("<button>");
+        var a = $("<button>");
 
-        b.addClass("gif-btn");
-        b.attr("data-name", gifs[i]);
-        b.text(gifs[i]);
-        $("#buttons-added").append(b);
+        a.addClass("gif-btn");
+        a.attr("data-name", gifs[i]);
+        a.text(gifs[i]);
+        $("#buttons-added").append(a);
     }
 }
+
+$('#add-giphy').on("click", function(event) {
+    event.preventDefault();
+    var gif = $('#giphy-input').val().trim();
+    gifs.push(gif);
+
+    buttonsShown();
+});
+
+$(document).on("click", ".gif-btn", displayGif);
+
+buttonsShown();
 
 // Reference Activity 10 ajax

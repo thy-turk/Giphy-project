@@ -14,6 +14,7 @@ function displayGif() {
         
         var gifResults = response.data;
         
+        // For loop that attatches attributes to our array of gifs
         for (var i = 0; i < gifResults.length; i++) {
             var gifDiv = $('<div>');
             gifDiv.addClass("gifDiv");
@@ -44,15 +45,15 @@ function buttonsShown() {
     $("#buttons-added").empty();
 
     for (var i = 0; i < gifs.length; i++) {
-        var a = $("<button>");
+        var abutton = $("<button>");
 
-        a.addClass("gif-btn btn btn-dark button-space");
+        abutton.addClass("gif-btn btn btn-dark button-space");
 
-        a.attr("data-name", gifs[i]);
+        abutton.attr("data-name", gifs[i]);
 
-        a.text(gifs[i]);
+        abutton.text(gifs[i]);
 
-        $("#buttons-added").append(a);
+        $("#buttons-added").append(abutton);
     }
 }
 

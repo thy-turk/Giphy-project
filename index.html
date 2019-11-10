@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,36 +9,58 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
+
 <body>
-    <div class="container">
-    
+    <!-- Bootstrap Jumbotron -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4">Check out some cool gifs!</h1>
-          <p class="lead">Click the button to pull up some gifs. You can even add your own!</p>
+            <h1 class="display-4">Check out some cool gifs!</h1>
+            <p class="lead">Click the button to pull up some gifs. You can even add your own!</p>
         </div>
-      </div>
-    
-    
-    <div id="buttons-added"></div>
+    </div>
 
-    <form id="giphy-form">
-        <label for="giphy-input">Add an animal here!</label>
-        
-        <input type="text" id="giphy-input">
+    <!-- Container for bootstrap for the page content -->
+    <div class="container">
 
-        <input id="add-giphy" class="btn btn-dark" type="submit" value="Submit">
-    </form>
 
-    <div id="giphy-view"></div>
+
+        <div class="card" style="width: 6;">
+            <div class="card-header">
+                Gif List
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div id="buttons-added"></div>
+                </li>
+                <li class="list-group-item">
+                    <form id="giphy-form">
+                        <label for="giphy-input">Add anything here!</label>
+
+                        <input type="text" id="giphy-input">
+
+                        <input id="add-giphy" class="btn btn-dark" type="submit" value="Submit">
+                    </form>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="card buffer-top">
+            <div class="card-body">
+                <div id="giphy-view"></div>
+            </div>
+        </div>
+
 
     </div>
-    
-    
+
+
 
     <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>

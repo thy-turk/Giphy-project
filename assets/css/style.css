@@ -1,12 +1,28 @@
 .button-space {
     margin-left: 5px;
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .lead, .display-4 {
     text-align: center;
 }
 
-html {
-    background-image: url()
+body {
+    background-image: url(../images/bgImage.png)
 }
+
+.buffer-top {
+    margin-top: 10px;
+}
+
+#giphy-view {
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 4;
+    overflow-x: hidden;
+    justify-content: space-evenly;
+}
+

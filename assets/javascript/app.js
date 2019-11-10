@@ -39,14 +39,17 @@ function displayGif() {
     });
 }
 
-$('#giphy-view').on("click", ".gif", function() {
+// Function that stops and plays the gifs
+$('#giphy-view').on("click", ".image", function() {
     var state = $(this).attr("data-state");
-    if (state === "still") {
+    if (state == "still") {
         $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
     } else {
-        $(this).attr("src",)
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
     }
-})
+});
 
 // Funtion that creates the buttons from the gifs array
 function buttonsShown() {

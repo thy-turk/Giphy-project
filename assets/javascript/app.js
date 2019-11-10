@@ -1,5 +1,5 @@
 // Declaring starter buttons that will show on page load
-var gifs = ["lion", "tiger", "leopard", "lynx", "caracal", "serval", "ocelot"];
+var gifs = ["lion", "tiger", "leopard", "lynx", "caracal", "serval", "ocelot", "jaguar"];
 
 // Function to display the gifs on the page when a respective button is shown
 function displayGif() {

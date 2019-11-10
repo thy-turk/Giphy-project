@@ -8,9 +8,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
-
+    <div class="container">
+    
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Check out some cool gifs!</h1>
+          <p class="lead">Click the button to pull up some gifs. You can even add your own!</p>
+        </div>
+      </div>
+    
+    
     <div id="buttons-added"></div>
 
     <form id="giphy-form">
@@ -18,10 +29,12 @@
         
         <input type="text" id="giphy-input">
 
-        <input id="add-giphy" type="submit" value="Submit">
+        <input id="add-giphy" class="btn btn-dark" type="submit" value="Submit">
     </form>
 
     <div id="giphy-view"></div>
+
+    </div>
     
     
 

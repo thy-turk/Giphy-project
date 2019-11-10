@@ -1,5 +1,5 @@
 // Declaring starter buttons that will show on page load
-var gifs = ["cat", "dog", "bird", "lynx"];
+var gifs = ["lion", "tiger", "leopard", "lynx", "caracal", "serval", "ocelot"];
 
 // Function to display the gifs on the page when a respective button is shown
 function displayGif() {
@@ -10,7 +10,7 @@ function displayGif() {
         url: queryURL,
         method: "GET",
     }).then(function(response) {
-        // $('#giphy-view').empty();
+        $('#giphy-view').empty();
         
         var gifResults = response.data;
         
@@ -28,7 +28,7 @@ function displayGif() {
             imageTag.attr("src", gifResults[i].images.fixed_height_still.url);
             imageTag.attr("data-still", gifResults[i].images.fixed_height_still.url);
             imageTag.attr("data-animate", gifResults[i].images.fixed_height.url);
-
+            imageTag.attr("data-state", "still");
             gifDiv.append(imageTag);
 
             $("#giphy-view").prepend(gifDiv);
@@ -39,18 +39,6 @@ function displayGif() {
     });
 }
 
-// Function that stops and plays the gifs
-$('#giphy-view').on("click", ".image", function() {
-    var state = $(this).attr("data-state");
-    if (state == "still") {
-        $(this).attr("src", $(this).attr("data-animate"));
-        $(this).attr("data-state", "animate");
-    } else {
-        $(this).attr("src", $(this).attr("data-still"));
-        $(this).attr("data-state", "still");
-    }
-});
-
 // Funtion that creates the buttons from the gifs array
 function buttonsShown() {
     $("#buttons-added").empty();
@@ -58,7 +46,7 @@ function buttonsShown() {
     for (var i = 0; i < gifs.length; i++) {
         var a = $("<button>");
 
-        a.addClass("gif-btn");
+        a.addClass("gif-btn btn btn-dark button-space");
 
         a.attr("data-name", gifs[i]);
 
@@ -81,4 +69,15 @@ $(document).on("click", ".gif-btn", displayGif);
 
 buttonsShown();
 
-// Reference Activity 10 ajax
+// This stops and plays the gifs when clicked
+$('#giphy-view').on("click", ".image", function() {
+    var state = $(this).attr("data-state");
+    // If statement that changes the gif from a still to animated state and vice versa
+    if (state == "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+    } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+    }
+});

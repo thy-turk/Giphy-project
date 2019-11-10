@@ -4,7 +4,7 @@ var gifs = ["lion", "tiger", "leopard", "lynx", "caracal", "serval", "ocelot"];
 // Function to display the gifs on the page when a respective button is shown
 function displayGif() {
     var gif = $(this).attr("data-name");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=2wwaLFfpLZC98FttzuIiGzBlSkeXaXiV&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=2wwaLFfpLZC98FttzuIiGzBlSkeXaXiV&limit=10";
     console.log(queryURL);
     $.ajax({
         url: queryURL,

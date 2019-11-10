@@ -26,3 +26,6 @@ body {
     justify-content: space-evenly;
 }
 
+.container {
+    font-family: 'Roboto', sans-serif;
+}

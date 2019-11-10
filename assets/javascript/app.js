@@ -12,13 +12,16 @@ function displayGif() {
     }).then(function(response) {
         $('#giphy-view').empty();
         
+        // Creating variable that holds the giphy api information
         var gifResults = response.data;
         
         // For loop that attatches attributes to our array of gifs
         for (var i = 0; i < gifResults.length; i++) {
+            // Creating new div that will take the gifs info
             var gifDiv = $('<div>');
             gifDiv.addClass("gifDiv");
 
+            // Pulls the rating from the api JSON and stores it in a variable
             var ratingText = $('<p>').text("Rating: " + gifResults[i].rating);
 
             gifDiv.append(ratingText);
@@ -26,6 +29,7 @@ function displayGif() {
             var imageTag = $("<img>");
             imageTag.addClass("image");
 
+            // Giving the variable attributes that define data states
             imageTag.attr("src", gifResults[i].images.fixed_height_still.url);
             imageTag.attr("data-still", gifResults[i].images.fixed_height_still.url);
             imageTag.attr("data-animate", gifResults[i].images.fixed_height.url);
